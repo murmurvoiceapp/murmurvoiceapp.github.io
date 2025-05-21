@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murmur - Your Voice, Your Notes, Your Mind</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Murmur</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Murmur</h1>
+                <p class="tagline">Your voice, your notes, your mind.</p>
+                <p class="hero-description">Transform your spoken thoughts into beautifully organized notes. Simple, private, and powerful.</p>
+                <div class="hero-flow-row">
+                    <div class="floating-card card-1">
+                        <div class="card-content">
+                            <span class="card-icon">🎤</span>
+                            <span class="card-text">Record</span>
+                        </div>
+                    </div>
+                    <span class="flow-arrow">&#8594;</span>
+                    <div class="floating-card card-2">
+                        <div class="card-content">
+                            <span class="card-icon">✍️</span>
+                            <span class="card-text">Transcribe</span>
+                        </div>
+                    </div>
+                    <span class="flow-arrow">&#8594;</span>
+                    <div class="floating-card card-3">
+                        <div class="card-content">
+                            <span class="card-icon">📚</span>
+                            <span class="card-text">Organize</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <button class="cta-button" id="joinWaitlist">Try Murmur</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Voice Recording</h3>
+                    <p>Capture your thoughts naturally with crystal-clear voice recording.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Transcription</h3>
+                    <p>Transform your voice into perfectly structured written notes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Offline Privacy</h3>
+                    <p>Your notes stay on your device, ensuring complete privacy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Smart Organization</h3>
+                    <p>Effortlessly organize and find your notes when you need them.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Murmur</h2>
+            <p>Murmur is a privacy-focused voice note app that helps you capture and organize your thoughts. We believe in keeping things simple, secure, and efficient.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Murmur</h3>
+                <p>Your voice, your notes, your mind.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="mailto:contact@murmur.app">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Murmur. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Join the Waitlist</h2>
+            <p>Be among the first to experience Murmur when we launch.</p>
+            <form id="waitlistForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
