@@ -31,14 +31,15 @@ document.querySelectorAll('.feature-card').forEach(card => {
     observer.observe(card);
 });
 
-// Add hover effect to CTA button
-const ctaButton = document.querySelector('.cta-button');
-ctaButton.addEventListener('mouseover', () => {
-    ctaButton.style.transform = 'translateY(-2px)';
-    ctaButton.style.boxShadow = '0 4px 12px rgba(37, 99, 235, 0.2)';
-});
+// Add hover effect to CTA buttons
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('mouseover', () => {
+        button.style.transform = 'translateY(-2px)';
+        button.style.boxShadow = '0 4px 12px rgba(37, 99, 235, 0.2)';
+    });
 
-ctaButton.addEventListener('mouseout', () => {
-    ctaButton.style.transform = 'translateY(0)';
-    ctaButton.style.boxShadow = 'none';
+    button.addEventListener('mouseout', () => {
+        button.style.transform = 'translateY(0)';
+        button.style.boxShadow = 'none';
+    });
 }); 

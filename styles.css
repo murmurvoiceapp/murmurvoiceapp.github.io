@@ -86,7 +86,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem var(--spacing-unit);
+    padding: 6rem var(--spacing-unit) 2rem;
     background: linear-gradient(135deg, var(--background-color) 0%, var(--secondary-background) 100%);
     position: relative;
     overflow: hidden;
