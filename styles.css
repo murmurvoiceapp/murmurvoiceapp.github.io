@@ -1,10 +1,15 @@
 :root {
     --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #4f46e5;
     --text-color: #1f2937;
+    --text-light: #6b7280;
     --background-color: #ffffff;
     --secondary-background: #f9fafb;
     --border-radius: 12px;
     --spacing-unit: 1rem;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --hover-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
 }
 
 * {
@@ -83,129 +88,237 @@ body {
     align-items: center;
 }
 
-.coming-soon-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary-color), #4f46e5);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    animation: pulse 2s infinite;
-}
-
 .hero h1 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary-color), #4f46e5);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.2;
 }
 
 .tagline {
     font-size: 1.5rem;
-    color: #4b5563;
-    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .hero-description {
     font-size: 1.1rem;
-    color: #6b7280;
-    margin-bottom: 2.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
     max-width: 600px;
     text-align: center;
 }
 
+/* Flow Row */
 .hero-flow-row {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 2.2rem;
-    margin-top: 0;
+    margin-bottom: 3rem;
     position: relative;
     z-index: 2;
 }
 
-.cta-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.cta-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-.cta-subtext {
-    font-size: 0.9rem;
-    color: #6b7280;
-}
-
-/* Hero Visual Elements */
 .floating-card {
     position: static;
     background: white;
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--card-shadow);
     display: flex;
     align-items: center;
     gap: 0.75rem;
     width: 150px;
     min-width: 120px;
     justify-content: center;
-    transition: box-shadow 0.2s;
+    transition: all 0.3s ease;
 }
 
 .floating-card:hover {
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.10);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
 }
 
 .flow-arrow {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     user-select: none;
     margin: 0 0.2rem;
     opacity: 0.7;
 }
 
-/* Remove previous hero-visual and connecting line styles */
-.hero-visual, .hero-visual::before {
-    display: none !important;
-}
-
-.card-content {
+/* CTA Buttons */
+.cta-container {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.card-icon {
-    font-size: 1.5rem;
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.card-text {
-    font-weight: 500;
+.cta-button.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.cta-button.secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Features Section */
+.features {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--secondary-background);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
     color: var(--text-color);
-    white-space: nowrap;
+}
+
+.feature-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 var(--spacing-unit);
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--hover-shadow);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* Use Cases Section */
+.use-cases {
+    padding: 6rem var(--spacing-unit);
+    background-color: white;
+}
+
+.use-cases h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.use-cases-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 var(--spacing-unit);
+}
+
+.use-case-card {
+    background: var(--secondary-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.use-case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--hover-shadow);
+}
+
+.use-case-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.use-case-card p {
+    color: var(--text-light);
+}
+
+/* Roadmap Section */
+.roadmap {
+    padding: 6rem var(--spacing-unit);
+    background-color: var(--secondary-background);
+}
+
+.roadmap h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.roadmap-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.roadmap-list {
+    list-style: none;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    text-align: left;
+}
+
+.roadmap-list li {
+    padding: 1rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
 }
 
 /* Modal */
@@ -238,16 +351,17 @@ body {
     top: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #6b7280;
+    color: var(--text-light);
 }
 
 .modal h2 {
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .modal p {
     margin-bottom: 1.5rem;
-    color: #6b7280;
+    color: var(--text-light);
 }
 
 #waitlistForm {
@@ -275,107 +389,7 @@ body {
 }
 
 #waitlistForm button:hover {
-    background-color: #1d4ed8;
-}
-
-/* Animations */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero h1, .tagline, .hero-description, .cta-container {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-.hero h1 {
-    animation-delay: 0.2s;
-}
-
-.tagline {
-    animation-delay: 0.4s;
-}
-
-.hero-description {
-    animation-delay: 0.6s;
-}
-
-.cta-container {
-    animation-delay: 0.8s;
-}
-
-/* Features Section */
-.features {
-    padding: 6rem var(--spacing-unit);
-    background-color: var(--secondary-background);
-}
-
-.features h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.feature-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 var(--spacing-unit);
-}
-
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-}
-
-.feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-/* About Section */
-.about {
-    padding: 6rem var(--spacing-unit);
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    background-color: var(--primary-dark);
 }
 
 /* Footer */
@@ -396,6 +410,7 @@ body {
 .footer-section h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .footer-section a {
@@ -414,13 +429,13 @@ body {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid #e5e7eb;
-    color: #6b7280;
+    color: var(--text-light);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .tagline {
@@ -431,7 +446,63 @@ body {
         display: none;
     }
 
-    .feature-grid {
+    .feature-grid,
+    .use-cases-grid {
         grid-template-columns: 1fr;
     }
+
+    .cta-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .hero-flow-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1, .tagline, .hero-description, .hero-flow-row, .cta-container {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.2s;
+}
+
+.tagline {
+    animation-delay: 0.4s;
+}
+
+.hero-description {
+    animation-delay: 0.6s;
+}
+
+.hero-flow-row {
+    animation-delay: 0.8s;
+}
+
+.cta-container {
+    animation-delay: 1s;
 } 
