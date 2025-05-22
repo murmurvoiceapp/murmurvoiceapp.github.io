@@ -8,52 +8,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Modal functionality
-const modal = document.getElementById('waitlistModal');
-const joinWaitlistBtn = document.getElementById('joinWaitlist');
-const closeModalBtn = document.querySelector('.close-modal');
-const waitlistForm = document.getElementById('waitlistForm');
-
-joinWaitlistBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-});
-
-closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-waitlistForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = waitlistForm.querySelector('input[type="email"]').value;
-    
-    // Here you would typically send this to your backend
-    console.log('Waitlist signup:', email);
-    
-    // Show success message
-    const formContent = waitlistForm.innerHTML;
-    waitlistForm.innerHTML = `
-        <div class="success-message">
-            <p>Thanks for your interest! We'll keep you updated.</p>
-        </div>
-    `;
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-        waitlistForm.innerHTML = formContent;
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }, 3000);
-});
-
 // Add scroll-based animation for feature cards
 const observerOptions = {
     threshold: 0.1,

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dynamic M with Microphone -->
+    <path d="M12 28V12L20 20L28 12V28" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 28C23.3137 28 26 25.3137 26 22" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M26 22H30" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M20 28V34" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M16 34H24" stroke="url(#gradient)" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Gradient definition -->
+    <defs>
+        <linearGradient id="gradient" x1="12" y1="12" x2="30" y2="34" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#60A5FA"/>
+            <stop offset="100%" stop-color="#818CF8"/>
+        </linearGradient>
+    </defs>
+</svg> 
